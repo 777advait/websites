@@ -1,0 +1,177 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 4em;
+}
+
+nav ul {
+    display: flex;
+    gap: 4em;
+    font-size: 1.4rem;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+nav ul li a.active{
+    font-weight: bold;
+}
+
+
+/* hero sect */
+
+/* left */
+main {
+    display: flex;
+    margin: 0;
+    gap: 8em;
+    margin-top: 10em;
+}
+
+.left-col {
+    width: 45%;
+}
+.right-col {
+    flex-grow: 1;
+}
+
+.head {
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    font-size: 5.2rem;
+    margin: 0;
+}
+
+.subhead {
+    font-size: 1.8rem;
+}
+
+.cta-btns {
+    margin: 5em 0;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 3em;
+    align-items: center;
+}
+
+.primary-cta {
+    background-color: #F1E2D1;
+    border-radius: 8em;
+    padding: 1em 2em;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.secondary-cta {
+    font-size: 1.8rem;
+    color: black;
+}
+
+.news {
+    display: flex;
+    margin: 0;
+    gap: 4em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: .8em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.employees {
+    font-size: 3.6rem;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Pathway Extreme';
+}
+
+.details {
+    font-size: 1.4rem;
+    margin: 0;
+    margin-left: 5em;
+}
+
+
+/* right */
+
+.right-col {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    'left .'
+    'left .';
+    gap: 3em;
+}
+
+.card {
+    border-radius: .9em;
+    background-position: center center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 3em;
+    align-items: end;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url("/images/sweater.png");
+    background-size: 142%;
+}
+
+.card2 {
+    background-image: url("/images/jackets.png");
+    background-size: 142%;
+}
+
+.card3 {
+    background-image: url("/images/shoes.png");
+    background-size: 150%;
+}
+
+.card-details {
+    background: white;
+    opacity: 65%;
+    border-radius: .6em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 1.2rem;
+}
