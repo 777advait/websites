@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'SaintMonica';
+    src: url("/fonts/SaintMonica.ttf");
+}
+
+html {
+    font-size: 62.5%;
+    background-color: black;
+    color: white;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 1em auto;
+}
+
+
+/* navbar */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+nav ul{
+    display: flex;
+    gap: 5em;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    list-style-type: none;
+    gap: 3em;
+    align-items: center;
+    margin: 0;
+}
+
+.active {
+    font-weight: bold;
+}
+
+
+/* hero section */
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 10em;
+}
+
+/* left column */
+.left {
+    width: 45%;    
+}
+
+.head {
+    margin: 0;
+    font-size: 5.2rem;
+    font-family: 'SaintMonica';
+    font-weight: normal;
+}
+
+.subhead {
+    font-size: 1.8rem;
+    margin: 2em 0;
+}
+
+.cta-btns {
+    display: flex;
+    gap: 3em;
+    font-size: 1.4rem;
+    align-items: center;
+    margin: 4.5em 0;
+}
+
+.browse {
+    background-color: white;
+    border-radius: 11em;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.playlist {
+    display: flex;
+    align-items: center;
+    gap: .9em;
+}
+
+.playlist a {
+    color: white;
+}
+
+.help {
+    display: flex;
+    margin-top: 9em;
+    gap: 6em;
+    padding: 2em 3em;
+    border: 1px solid white;
+    align-items: center;
+    border-radius: .6em;
+}
+
+.help p{
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.help .subhead{
+    font-size: 2.4rem;
+    font-family: 'Playfair Display';
+    font-weight: bold;
+}
+
+/* right column */
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.items {
+    margin-top: 3.5em;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    'left .'
+    'left .';
+    gap: 3em;
+}
+
+.card {
+    display: flex;
+    align-items: end;
+    background-position: center center;
+    border-radius: .8em;
+    padding: 0 2em;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url("/images/ring.png");
+    background-size: 169%;
+}
+
+
+.card2 {
+    background-image: url("/images/bracelet.png");
+    background-size: 100%;
+}
+
+.card3 {
+    background-image: url("/images/chain.png");
+    background-size: 99%;
+}
+
+
+.card-details {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    background-color: whitesmoke;
+    opacity: 65%;
+    border-radius: .6em;
+    padding: 1em 2em;
+    margin: 0 auto;
+    margin-bottom: 1.0em;
+}
+
+.product {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8rem;
+    font-family: 'SaintMonica';
+    font-weight: bold;
+}
+
+.price {
+    color: black;
+    font-size: 1.2rem;
+}
+
+/* bottom section */
+.bottom {
+    margin-top: 7.5em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4.5em;
+}
+
+/* gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    '. karan'
+    '. karan';
+    justify-content: center;
+    gap: 5em;
+}
+
+.person {
+    display: flex;
+    align-items: end;
+    border-radius: .8em;
+    padding: 1em 2em;
+    background-position: center center;
+}
+
+.person1 {
+    background-image: url("/images/ranveer.png");
+    background-size: 100%;
+}
+
+.person2 {
+    background-image: url("/images/king.png");
+    background-size: 100%;
+}
+
+.person3 {
+    grid-area: karan;
+    background-image: url("/images/karan.png");
+    background-size: 210%;
+}
+
+.person-details {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+    background-color: whitesmoke;
+    opacity: 65%;
+    border-radius: .6em;
+    padding: 1em 4em;
+    margin-top: 30em;
+}
+
+.name {
+    font-family: 'SaintMonica';
+    font-size: 1.6rem;
+    color: black;
+    font-weight: bold;
+}
+
+.profession {
+    color: black;
+    font-size: 1.2rem;
+    font-family: 'SaintMonica';
+}
+
+.person-details a {
+    font-size: 1.4rem;
+    background-color: black;
+    color: white;
+    padding: 1em 2em;
+    border-radius: .6em;
+    text-decoration: none;
+}
