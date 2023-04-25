@@ -1,0 +1,307 @@
+@font-face {
+    font-family: "Yipes";
+    src: url("/fonts/Yipes.ttf");
+}
+
+body {
+    font-family: 'Poppins';
+    margin: 1.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-family: "Yipes";
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("/images/shoe.png");
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    // overflow: hidden;
+}
+
+nav {
+    display: fixed;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    ul {
+        list-style-type: none;
+        display: block;
+        margin-top: 8em;
+        padding: 0;
+
+        a {
+            color: black;
+            padding: .75em 2em;
+            display: block;
+            width: 100%;
+
+            &:hover {
+                background: rgb(235, 235, 235);
+            }
+        }
+    }
+
+    .close {
+        float: right;
+        margin: 2em;
+        width: 2.5em;
+        cursor: pointer;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+        width: 2.5em;
+        margin: .6em;
+        cursor: pointer;
+    }
+}
+
+.hero {
+    color: white;
+    height: 85vh;
+    margin-top: 8em;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+
+    .down-arrow {
+        position: absolute;
+        bottom: 8em;
+        width: 1em;
+        animation: moveArrow 1s alternate-reverse infinite;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+.more-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+
+    h1 {
+        font-family: "Yipes";
+        font-weight: bold;
+        font-size: 2.0rem;
+    }
+
+    .feature {
+        border: 1px solid black;
+        padding: 1em;
+        border-radius: .8em;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 20em;
+        border-radius: .6em;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        margin: 0;
+        margin-bottom: 1em;
+    }
+}
+
+.open-nav {
+    transform: translateX(0);
+}
+
+@media only screen and (min-width:680px) {
+    body {
+        margin: 3em 3em;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    body {
+        margin: 2em 3em;
+    }
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        .close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: 0;
+                align-items: center;
+                padding: .5em 1.5em;
+                font-size: 1.0rem;
+                font-weight: bold;
+
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo {
+        color: black;
+    }
+
+    .hero {
+        width: 40%;
+        height: auto;
+        color: black;
+
+        .subhead {
+            margin-bottom: 8em;
+        }
+
+        .down-arrow {
+            position: unset;
+            margin-bottom: 10em;
+            path {
+                fill: black;
+            }
+        }
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        margin-bottom: 3em;
+        gap: 3em;
+    }
+
+    img {
+        width: 25em;
+    }
+
+    .content{
+        text-align: right;
+        width: 25em;
+    }
+
+    .feature.flip {
+        grid-template-areas: 
+        "left .";
+
+        .content {
+            text-align: left;
+        }
+
+        img {
+            grid-area: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        margin-top: 5rem;
+        font-size: 1.4rem;
+
+        .subhead {
+            margin-bottom: 3.5em;
+        }
+    }
+
+    .hero-img {
+        height: 100vh;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
