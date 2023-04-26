@@ -1,0 +1,355 @@
+@font-face {
+    font-family: "monument";
+    src: url("/fonts/MonumentExtended-Regular.otf");
+}
+
+@font-face {
+    font-family: "Yipes";
+    src: url("/fonts/Yipes.otf");
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 3em;
+    font-family: 'Poppins';
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-family: "monument";
+    color: white;
+    font-size: 2.4rem;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 999;
+    background: white;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    ul {
+        list-style-type: none;
+        display: block;
+        margin-top: 6em;
+        padding: 0;
+
+        a {
+            color: black;
+            display: block;
+            padding: .75em 2em;
+            font-size: 1.4rem;
+            width: 100%;
+
+            &:hover {
+                background: rgb(235, 235, 235);
+            }
+        }
+    }
+
+    .close {
+        margin: 2em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu {
+        width: 2em;
+        margin: .6em;
+        cursor: pointer;
+    }
+}
+
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url("/images/hero.png");
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    animation: introLoad 2s forwards;
+}
+
+.hero {
+    height: 95vh;
+
+    h1 {
+        font-size: 4.8rem;
+        margin-top: 4rem;
+        font-family: "Yipes";
+        font-weight: normal;
+        transform: translateY(100%);
+        opacity: 0;
+        animation: moveDown 1s ease-in-out forwards;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .down {
+        width: 2em;
+        position: absolute;
+        bottom: 12em;
+        animation: moveArrow 1s alternate-reverse infinite;
+        
+        path {
+            fill: white;
+        }
+    }
+}
+
+.browse {
+    h1 {
+        font-family: "Yipes";
+        font-weight: normal;
+        font-size: 3.6rem;
+        margin: 1em auto;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.items {
+    display: flex;
+    align-items: end;
+    background-position: center center;
+    border-radius: .6rem;
+    padding: 1em 2em;
+    max-width: 75%;
+    margin: auto;
+    background-size: 100%;
+    transition: background-size 600ms;
+}
+
+.item1 {
+    background-image: url("/images/tshirt.png");
+}
+
+.item2 {
+    background-image: url("/images/tops.png");
+}
+
+.item3 {
+    background-image: url("/images/kurta.png");
+}
+
+.item4 {
+    background-image: url("/images/dress.png");
+}
+
+.item5 {
+    background-image: url("/images/sneakers.png");
+}
+
+.item6 {
+    background-image: url("/images/perfumes.png");
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 10em;
+    background-color: white;
+    padding: 1em 2em;
+    opacity: 65%;
+    border-radius: .6em;
+    transition: transform 600ms;
+    margin: 10em auto 0 auto;
+
+    .product {
+        color: black;
+        font-size: 1.6rem;
+    }
+
+    .price {
+        color: black;
+        font-size: 1.4rem;
+    }
+}
+
+.open-nav {
+    transform: translateX(0);
+}
+
+@media only screen and (min-width: 860px) {
+    body {
+        margin: 5em;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas: 
+        "tshirt ."
+        "tshirt ."
+        "top ."
+        "top .";
+    }
+
+    .item1 {
+        grid-area: tshirt;
+    }
+
+    .item2 {
+        grid-area: top;
+    }
+    
+    .items {
+        margin: unset;
+        max-width: unset;
+    }
+}
+
+
+@media only screen and (min-width: 920px) {
+    nav {
+        transform: translateX(0);
+        position: relative;
+        display: block;
+        width: auto;
+        height: auto;
+        background: unset;
+
+        ul {
+            display: flex;
+            margin: 0;
+            
+            a {
+                color: white;
+                padding: 0 2em;
+
+                &:hover {
+                    background: none;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    border-bottom: 2px solid lightgray;
+                    bottom: -3px;
+                    transition: width .3s;
+                }
+            }
+
+            a.active:before {
+                position: absolute;
+                content: "";
+                height: 1px;
+                width: 1em;
+                border-bottom: 2px solid white;
+                bottom: -3px;
+            }
+
+            a:hover:before {
+                width: 1em;
+            }
+        }
+
+        .close {
+            display: none;
+        }
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+    }
+
+    .hero {
+        width: 40%;
+
+        .down {
+            bottom: 5em;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .logo {
+        font-size: 3.6rem;
+    }
+
+    nav ul li a {
+        font-size: 1.6rem;
+    }
+
+    .cards {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+}
+
+// microinteractions
+.items:hover {
+    background-size: 110%;
+}
+
+.items:hover .content {
+    transform: translateY(-10px);
+}
+
+// animations
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
