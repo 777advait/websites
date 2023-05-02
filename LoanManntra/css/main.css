@@ -1,0 +1,398 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #F2F2F2;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+:root {
+  --primary-color: #1ea8c6;
+}
+
+.open-nav {
+  transform: translateX(0);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background: white;
+  padding: 2em;
+}
+header .menu {
+  cursor: pointer;
+  width: 2em;
+}
+header .logo {
+  font-family: "Yusei Magic";
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+header .logo span {
+  color: var(--primary-color);
+}
+header nav {
+  position: fixed;
+  z-index: 999;
+  width: 50%;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100vh;
+  padding: 1em;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+header nav .active {
+  font-weight: bold;
+}
+header nav .menu {
+  display: block;
+}
+header nav .primary-nav {
+  margin-top: 8em;
+}
+header nav li a {
+  display: block;
+  padding: 0.5em;
+  font-size: 1.4rem;
+  text-align: right;
+}
+header nav li a:hover {
+  font-weight: bold;
+}
+header nav .close {
+  float: right;
+  margin: 1.5em;
+  width: 2.5em;
+  cursor: pointer;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+.hero {
+  text-align: center;
+}
+.hero .subhead {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: gray;
+  letter-spacing: 0.3em;
+}
+.hero .head {
+  font-size: 2.8rem;
+  margin-top: 0.2em;
+  margin-bottom: 2em;
+}
+.hero .cta-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 9em;
+}
+.hero .cta-btns .primary-cta {
+  font-size: 1.4rem;
+  color: whitesmoke;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border-radius: 5em;
+  padding: 1em 2em;
+  display: inline-block;
+  border: 3px solid var(--primary-color);
+}
+.hero .cta-btns .primary-cta:hover {
+  background: none;
+  color: black;
+}
+.hero .cta-btns .meeting {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  transition: gap 600ms;
+}
+.hero .cta-btns .meeting:hover {
+  gap: 1.6em;
+}
+.hero .cta-btns .meeting img {
+  width: 2em;
+}
+.hero .cta-btns .meeting .secondary-cta {
+  font-size: 1.4rem;
+  color: black;
+}
+.hero .cta-btns .meeting .secondary-cta:hover {
+  text-decoration: underline;
+}
+
+.features {
+  background-color: #0a2239;
+  color: white;
+}
+.features .head {
+  font-size: 3.2rem;
+  font-family: "Yusei Magic";
+  margin: 0;
+  margin-bottom: 2em;
+}
+.features img {
+  display: none;
+}
+.features ul {
+  margin: 0;
+  padding-left: 1em;
+}
+.features ul li {
+  font-size: 1.2rem;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  position: relative;
+}
+.features ul li:before {
+  content: "";
+  position: absolute;
+  left: -3em;
+  height: 20px;
+  width: 20px;
+  background-image: url("/images/check-circle-fill.svg");
+  background-size: contain;
+}
+
+.testimonial {
+  background-color: var(--primary-color);
+  color: rgb(227, 224, 224);
+}
+.testimonial li {
+  background-color: rgba(59, 141, 159, 0.5);
+  text-align: center;
+  padding: 2em 1em;
+  width: 85%;
+  margin: 2em auto 5em auto;
+  border-radius: 1em;
+}
+.testimonial li img {
+  width: 10em;
+  height: 10em;
+  border: 5px solid rgba(59, 141, 159, 0.5);
+  border-radius: 50%;
+  margin-top: -4.5em;
+}
+.testimonial li blockquote {
+  font-size: 1.4rem;
+}
+.testimonial li cite {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.contact .head {
+  font-size: 2.4rem;
+}
+.contact label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 0.8em;
+  font-family: "Poppins";
+  margin-bottom: 1em;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  border-radius: 0.8em;
+}
+
+input[type=submit] {
+  background-color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+  color: #F2F2F2;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 5em;
+  border-radius: 5em;
+  display: inline-block;
+  padding: 1em 2em;
+  width: unset;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: unset;
+  color: black;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+}
+
+@media only screen and (min-width: 860px) {
+  .testimonial li {
+    width: unset;
+    margin: 0;
+  }
+  .testimonial ul {
+    display: flex;
+    gap: 3em;
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+  }
+  iframe {
+    height: 500px;
+    width: 100%;
+    border-radius: 2em;
+  }
+}
+@media only screen and (min-width: 920px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+  }
+  header .logo {
+    font-size: 2.2rem;
+  }
+  header nav {
+    transform: translateX(0);
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    background: unset;
+  }
+  header nav .actions {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+  }
+  header nav ul {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+  header nav .primary-nav {
+    margin-top: 0;
+  }
+  header nav .primary-nav, header nav .secondary-nav {
+    gap: 3rem;
+  }
+  header nav .secondary-nav .premium-cta {
+    border: 3px solid var(--primary-color);
+    border-radius: 8em;
+    padding: 0.2em 0.5em;
+  }
+  header nav .secondary-nav .premium-cta:hover {
+    font-weight: bold;
+    background: var(--primary-color);
+  }
+  header nav .secondary-nav .premium-cta:hover a {
+    color: whitesmoke;
+  }
+  header .menu, header .close {
+    display: none;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3em;
+    padding: 0;
+  }
+  .hero .left {
+    text-align: left;
+  }
+  .hero .left .cta-btns {
+    display: flex;
+    flex-direction: unset;
+  }
+  .hero .right img {
+    width: 400px;
+    height: 400px;
+  }
+  .features {
+    padding-left: 6em;
+  }
+  .features ul {
+    padding-left: 5em;
+  }
+  .features ul li {
+    font-size: 1.4rem;
+  }
+  .features {
+    position: relative;
+  }
+  .features img {
+    display: block;
+    width: 350px;
+    position: absolute;
+    right: 0;
+    bottom: -5em;
+  }
+  .testimonial {
+    padding-top: 10em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .hero, .contact {
+    max-width: 1000px;
+    margin: 3em auto;
+  }
+  .hero .left, .contact .left {
+    width: 45%;
+  }
+  .features {
+    padding: 10em;
+  }
+  .features .head {
+    margin-left: 4em;
+  }
+  .features ul {
+    padding-left: 10em;
+    margin-left: 10em;
+  }
+  .features:before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 20em;
+    background: var(--primary-color);
+    left: 0;
+    top: -4em;
+  }
+  .features:after {
+    content: "";
+    width: 200px;
+    position: absolute;
+    height: 20em;
+    background: url("/images/dots.svg") no-repeat;
+    left: 4.5em;
+    top: 7em;
+  }
+  .testimonial li {
+    width: 30em;
+  }
+  .testimonial ul {
+    justify-content: space-evenly;
+  }
+}/*# sourceMappingURL=main.css.map */
