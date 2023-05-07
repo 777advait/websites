@@ -1,0 +1,480 @@
+@font-face {
+    font-family: "yipes";
+    src: url("/fonts/Yipes.otf");
+}
+
+@font-face {
+    font-family: "wakile";
+    src: url("/fonts/Wakile.otf");
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --primary-color: #232526;
+    --secondary-color: #c4ad58;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: "Poppins";
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.menu {
+    width: 2em;
+    cursor: pointer;
+}
+
+
+// navbar
+header {
+    padding: 3em;
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            font-size: 2.4rem;
+            font-family: "yipes";
+            font-weight: bold;
+        }
+
+        .secondary-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5em;
+        }
+    }
+}
+
+.open-nav {
+    transform: translateX(0%);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background: var(--secondary-color);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform .5s ease-in-out;
+
+    ul {
+        margin-top: 6em;
+        padding: 0;
+        padding-right: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        text-align: right;
+
+        a {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            width: 100%;
+        }
+    }
+
+    .close {
+        width: 3em;
+        float: left;
+        top: 0;
+        left: 0;
+        margin: 1em;
+        cursor: pointer;
+    }
+}
+
+
+// hero
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: url("/images/hero.png");
+    background-position: center;
+    background-size: cover;
+    animation: introLoad 1.5s forwards;
+}
+
+.hero {
+    height: 90vh;
+    margin: 3em;
+
+    h1 {
+        font-size: 2.4rem;
+        font-family: "yipes";
+        line-height: 1.5em;
+        margin-top: 2em;
+        opacity: 0;
+        animation: sweepDown 1.5s forwards ease-in-out;
+    }
+
+    .down-arrow {
+        width: 2em;
+        position: absolute;
+        bottom: 15em;
+        stroke: var(--secondary-color);
+        animation: pointDown 1s alternate-reverse infinite;
+
+        path {
+            fill: var(--secondary-color);
+        }
+    }
+}
+
+
+.fotm {
+    margin-top: 10em;
+    margin: 3em;
+
+    h1 {
+        text-align: center;
+        font-size: 3.6rem;
+        font-family: "yipes";
+    }
+
+    .glider {
+        width: 300px;
+        height: 400px;
+    }
+
+    .card {
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        border-radius: 1em;
+        transition: background-size 600ms;
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            font-size: 1.4rem;
+            margin: 0 1em 1em 1em;
+            background-color: rgba(196, 173, 88, 75%);
+            border-radius: .8em;
+            color: var(--primary-color);
+            transition: transform 600ms;
+
+            a {
+                color: var(--primary-color);
+            }
+        }
+
+        &:hover {
+            background-size: 110%;
+            
+            .details {
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    .glider-dots {
+        margin-bottom: 10em;
+    }
+
+    .card1 {
+        background: url("/images/angelic-aura.png");
+        background-size: 100%;
+        background-position: center;
+    }
+    .card2 {
+        background: url("/images/celestial-spark.png");
+        background-size: 100%;
+        background-position: center;
+    }
+    .card3 {
+        background: url("/images/mystic-mirage.png");
+        background-size: 100%;
+        background-position: center;
+    }
+    .card4 {
+        background: url("/images/radiant-bloom.png");
+        background-size: 100%;
+        background-position: center;
+    }
+}
+
+
+.charity {
+    text-align: center;
+    margin: 5em 0;
+    padding: 3em;
+    background-image: url("/images/clouds.png");
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+        font-size: 3.6rem;
+        font-family: "yipes";
+        color: #dee1e2;
+    }
+
+    p {
+        font-size: 1.6rem;
+        margin-bottom: 3em;
+        color: #dee1e2;
+    }
+
+    .donate-cta {
+        font-size: 1.6rem;
+        margin-top: 3em;
+        font-weight: bold;
+        border: 2px solid #dee1e2;;
+        padding: .5em 2em;
+        border-radius: 2em;
+        color: #dee1e2;
+
+        &:hover {
+            background: #dee1e2;
+            color: var(--primary-color);
+        }
+    }
+}
+
+.contact {
+    margin: 3em;
+
+    h1 {
+        font-size: 3.6rem;
+        font-family: "yipes";
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: .5em;
+    }
+
+    input, textarea {
+        width: 95%;
+        padding: .8em;
+        border: 1px solid gray;
+        border-radius: .6em;
+        box-sizing: border-box;
+        margin-bottom: 1em;
+        font-family: "Poppins";
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        border-radius: 1em;
+    }
+}
+
+input[type="submit"] {
+    margin: 2em 0;
+    width: unset;
+    border: 2px solid var(--secondary-color);
+    padding: 1em;
+    border-radius: 2em;
+    font-size: 1.4rem;
+    background: unset;
+    color: var(--secondary-color);
+    font-weight: bold;
+
+    &:hover {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+    }
+}
+
+
+@media only screen and (min-width: 920px) {
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: unset;
+
+        .close {
+            display: none;
+        }
+
+
+        ul {
+            flex-direction: row;
+            margin: 0;
+
+            a {
+                color: var(--secondary-color);
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    border-bottom: 2px solid var(--secondary-color);
+                    bottom: -3px;
+                    transition: width .3s;
+                }
+            }
+            
+            a.active:before {
+                position: absolute;
+                content: "";
+                height: 1px;
+                width: 25%;
+                border-bottom: 2px solid var(--secondary-color);
+                bottom: -3px;
+            }
+
+            a:hover:before {
+                width: 25%;
+            }
+        }
+    }
+
+    header {
+        margin: 2em;
+
+        .navbar {
+            display: grid;
+            align-items: center;
+            justify-content: flex-start;
+            grid-template-columns: repeat(2, auto);
+            grid-template-areas: 
+            ". ."
+            "primary-nav primary-nav";
+
+            .logo {
+                font-size: 3.6rem;
+                margin-right: 4em;
+            }
+
+            .primary-nav {
+                grid-area: primary-nav;
+                margin: 2em 0;
+                
+                nav ul li a {
+                    font-size: 1.8rem;
+                    padding-right: .8em;
+                }
+            }
+
+            .secondary-nav {
+                gap: 3em;
+                img {
+                    width: 2.5em;
+                }
+            }
+        }
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 45%;
+    }
+
+    .hero {
+        width: 45%;
+        margin: 5em;
+        
+        h1 {
+            font-size: 3.6rem;
+        }
+
+        .down-arrow {
+            width: 3em;
+            bottom: 5em;
+        }
+    }
+
+    .charity {
+        p {
+            font-size: 1.8rem;
+        }
+
+        .donate-cta {
+            font-size: 1.8rem;
+        }
+    }
+
+    .contact {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        
+
+        .right {
+            iframe {
+                width: 500px;
+                height: 500px;
+            }
+        }
+    }
+
+}
+
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes sweepDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pointDown {
+    from {
+        transform: translateY(-30px);
+    }
+     
+    to {
+        transform: translateY(0);
+    }
+}

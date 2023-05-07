@@ -1,0 +1,297 @@
+@font-face {
+    font-family: "yipes";
+    src: url("/fonts/Yipes.otf");
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --primary-color: #232526;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins";
+    min-height: 100vh;
+    background-image: url("/images/background.png");
+    background-position: center;
+    background-size: cover;
+}
+
+
+// navbar
+.menu {
+    width: 2em;
+    
+    path {
+        fill: var(--primary-color);
+    }
+}
+
+header {
+    margin: 2em;
+
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .close {
+        width: 3em;
+        float: left;
+        top: 0;
+        right: 0;
+        margin: 1em;
+    }
+}
+
+.open-nav {
+    transform: translateX(0%);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(222, 225, 226);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform .5s ease-in-out;
+    
+
+    ul {
+        list-style-type: none;
+        margin-top: 6em;
+        padding: 0;
+        padding-right: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        text-align: right;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        width: 100%;
+    }
+
+    
+}
+
+
+// login
+.login-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-card {
+    padding: 4em;
+    background-color: rgba(222, 225, 226, .5);
+    width: 250px;
+    border-radius: 1em;
+
+    .login-card-logo a {
+        margin: 0;
+        margin-bottom: 2rem;
+        font-size: 3.6rem;
+        color: var(--primary-color);
+        font-weight: bold;
+        text-decoration: none;
+        font-family: "Yipes";
+
+        span {
+            font-size: 2rem;
+        }
+    }
+
+    .login-card-header {
+        h1 {
+            font-family: "Montserrat";
+            font-size: 2.4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 2em 0;
+        }
+    }
+
+    .login-card-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 1.5em;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: rgb(222, 225, 226);
+                color: var(--primary-color);
+            }
+        }
+
+        .form-item {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            input[type="email"], input[type="password"] {
+                border: none;
+                outline: none;
+                background: rgba(222, 225, 226, .8);
+                padding: 1rem 1.5rem;
+                border-radius: 1em;
+                width: 100%;
+                transition: background-color .5s;
+            }
+
+            input:focus {
+                background-color: whitesmoke;
+            }
+        }
+    }
+
+    .form-item-other {
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin: 1em 0;
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            accent-color: var(--primary-color);
+        }
+
+        a  {
+            color: var(--primary-color);
+            
+        }
+    }
+
+    .login-card-footer {
+        font-size: 1.4rem;
+        margin: 2rem;
+
+        a {
+            color: var(--primary-color);
+        }
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: unset;
+
+        .close {
+            display: none;
+        }
+        
+        ul {
+            flex-direction: row;
+            margin: 3em;
+            gap: 5em;
+
+            a {
+                position: relative;
+                font-weight: bold;
+                font-size: 2rem;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    border-bottom: 2px solid var(--primary-color);
+                    bottom: -3px;
+                    transition: width .3s;
+                }
+
+                &:hover:before {
+                    width: 25%;
+                }
+            }
+        }
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .login-card {
+        width: 500px;
+
+        .login-card-logo a {
+            font-size: 4.2rem;
+
+            span {
+                font-size: 2.5rem;
+            }
+        }
+
+        .login-card-header {
+            h1 {
+                font-size: 3.6rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+            }
+        }
+
+        .login-card-form {
+            
+            button {
+                width: 50%;
+                padding: 1.5rem 0;
+                margin: 0 auto;
+            }
+        }
+
+        .form-item {
+            width: 75%;
+            margin: 0 auto;
+
+            input[type="email"], input[type="password"] {
+                font-size: 1.8rem;
+            }
+        }
+
+        .form-item-other {
+            font-size: 1.8rem;
+        }
+
+        .login-card-footer {
+            font-size: 1.6rem;
+        }
+    }
+}
