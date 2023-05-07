@@ -18,6 +18,8 @@ body {
     background-image: url("/images/background.png");
     background-position: center;
     background-size: cover;
+    opacity: 0;
+    animation: introLoad 1.5s forwards;
 }
 
 
@@ -293,5 +295,16 @@ nav {
         .login-card-footer {
             font-size: 1.6rem;
         }
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
     }
 }
